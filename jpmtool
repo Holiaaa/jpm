@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# Jink Package Manager - jpm script.
+# This script provides package management functionalities.
+# Source code at https://github.com/jink-system/jpm/
+#
+# Jink Linux 2024
+
+display_usage() {
+    echo "jpm by Jink Linux."
+    echo "Usage: jpm [OPTIONS]"
+    echo "Options:"
+    echo "    --installjpkg <package.jpkg>   	Install the jpkg file"
+    echo "    --remove <packagename>     	Remove the specified package"
+    echo "    --help                    	Display this help message"
+    echo "    --version	<packagename>		Display the version of a package installed."
+    echo "    --upfile <package.jpkg>           Upgrade a package with a jpkg file"
+}
+
+install_package() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 --installjpkg <package.jpkg>"
+        exit 1
+    fi
+    /jpm/jpkg-installlocal.sh "$2"
+}
+
+remove_package() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 --remove <packagename>"
+        exit 1
+    fi
+    /jpm/jpkg-remove.sh "$2"
+}
+
+upfile() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 --upfile <package.jpkg>"
+        exit 1
+    fi
+    /jpm/jpkg-upfile.sh "$2"
+}
+
+version_display() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: $0 --version <packagename>"
+        exit 1
+    fi
+    /jpm/jpkg-version.sh "$2"
+}
+
+# Check if no arguments provided or --help option is specified
+if [ $# -eq 0 ] || [ "$1" == "--help" ]; then
+    display_usage
+    exit 0
+fi
+
+# Handle options
+case "$1" in
+    --installjpkg)
+        install_package "$@"
+        ;;
+    --remove)
+        remove_package "$@"
+        ;;
+    --upfile)
+	upfile "$@"
+	;;
+    --version)
+        version_display "$@"
+        ;;
+    *)
+        echo "Invalid option: $1"
+        display_usage
+        exit 1
+        ;;
+esac
+
