@@ -99,7 +99,7 @@ jpm --version nameofpackage
 
 ## Authors
 
-- [@Holiaaa](https://www.github.com/Holiaaa) - Developer of Jink Linux
+- [@Holiaaa](https://www.github.com/Holiaaa) - Developer
 
 
 ## License
