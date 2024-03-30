@@ -5,6 +5,14 @@ You can use the code if you want to implement a package manager on your distro!
 NOTE: This package manager work only with file, there is no way to connect to a server, if you want to do that, just implement that xD
 NOTE: It can be bugged, and maybe the code is not very good :/
 
+## Download JPM
+
+To download the v1.0 version of jpm you need to go to the release named 'release' and download the zip file, and put the folder in your / directory
+Then if you want to test to install a package you can go to the release named 'package-example' and download vim9.1.jpkg.
+
+WARNING: You can have some issue if you try to install vim with jpm if you have already vim installed on your computer.
+WARNING: You can have some bug, this code is adapted for a linux distro i made with only the kernel so :/
+
 ## How to use
 
 #### - Install a jpkg file.
