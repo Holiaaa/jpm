@@ -1,6 +1,9 @@
 ## 🚀 Jink Package Manager
-**jpm** is a package manager designed for **Jink Linux**.
+**jpm** is a package manager designed for a old Linux distro i made from scratch!
+You can use the code if you want to implement a package manager on your distro!
 
+NOTE: This package manager work only with file, there is no way to connect to a server, if you want to do that, just implement that xD
+NOTE: It can be bugged, and maybe the code is not very good :/
 
 ## How to use
 
